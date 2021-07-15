@@ -38,9 +38,29 @@ router.post("/register", (req, res) => {
         });
       }
     })
-    .catch(() => {
-      console.log("find one not working !!  ");
+    .catch((err) => {
+      console.log(err);
     });
+});
+
+router.post("/login", (req, res) => {
+  email = req.body.email;
+  password = req.body.password;
+
+  User.findOne({ email }).then((user) => {
+    // first check the email
+    if (!user) {
+      return res.status(400).json({ email: "user not found" });
+    }
+    // then check the password
+    bcrypt.compare(password, user.password).then((isMatch) => {
+      if (isMatch) {
+        res.json({ msg: "success (JWT) " });
+      } else {
+        return res.status(400).json({ password: "password incorrect" });
+      }
+    });
+  });
 });
 
 module.exports = router;
