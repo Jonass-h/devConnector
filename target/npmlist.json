@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"devconnector","dependencies":{"bcryptjs":{"version":"2.4.3"},"body-parser":{"version":"1.19.0"},"dotenv":{"version":"10.0.0"},"express":{"version":"4.17.1"},"gravatar":{"version":"1.8.1"},"jsonwebtoken":{"version":"8.5.1"},"mongoose":{"version":"5.13.2"},"passport-jwt":{"version":"4.0.0"},"passport":{"version":"0.4.1"},"validator":{"version":"13.6.0"}}}
