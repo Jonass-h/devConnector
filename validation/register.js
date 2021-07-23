@@ -3,12 +3,6 @@ const isEmpty = require("../validation/is_empty");
 
 module.exports = function (data) {
   let errors = {};
-  /*
-  data.name = !data.name ? data.name : "";
-  data.email = !data.email ? data.email : "";
-  data.password = !data.password ? data.password : "";
-  data.password2 = !data.password2 ? data.password2 : "";
-  */
   if (!validator.isLength(data.name, { min: 2, max: 30 })) {
     errors.name = " name must be between 2 and 30 characters ";
   }
