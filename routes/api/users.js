@@ -11,7 +11,6 @@ const validateLoginInput = require("../../validation/login");
 router.get("/test", (req, res) => {
   res.json({ msg: " users api is working !! " });
 });
-
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   if (!isValid) {
@@ -52,7 +51,6 @@ router.post("/register", (req, res) => {
       console.log(err);
     });
 });
-
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
